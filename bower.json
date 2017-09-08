@@ -1,0 +1,27 @@
+{
+  "name": "pop",
+  "homepage": "https://github.com/smmit/frontbase",
+  "authors": [
+    "TingerSure <Tingersure@gmail.com>"
+  ],
+  "description": "pop over pop",
+  "main": "index.html",
+  "keywords": [
+    "alert",
+    "cover",
+    "confirm",
+    "prompt"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "bootstrap": "^3.3.7"
+  }
+}

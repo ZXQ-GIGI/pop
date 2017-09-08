@@ -1,0 +1,41 @@
+{
+  "name": "pop",
+  "version": "1.0.0",
+  "description": "pop over pop",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tingersure/pop.git"
+  },
+  "keywords": [
+    "ex",
+    "alert",
+    "confirm",
+    "prompt",
+    "cover",
+    "smm",
+    "zhaoxueming",
+    "tingersure"
+  ],
+  "author": "tingersure <tingersure@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tingersure/pop/issues"
+  },
+  "homepage": "https://github.com/tingersure/pop#readme",
+  "dependencies": {
+    "gulp-browserify": "^0.5.1",
+    "gulp-clean-old": "^0.2.5",
+    "gulp-filter": "^5.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-typescript": "^3.1.6",
+    "gulp-uglify": "^3.0.0",
+    "static-server-nodejs": "^0.1.1"
+  },
+  "devDependencies": {
+    "typescript": "^2.3.3"
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    </head>
+    <body>
+
+
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+        <script src="./dist/pop.js"></script>
+
+        <script>
+            pop.ModalButton.default_style = pop.ModalButton.STYLE_SUCCESS;
+        </script>
+
+        <pre>
+
+            <div id="alert" class="btn btn-success btn-sm">alert</div>
+
+            pop.alert({
+                title   : "青花瓷",
+                msg     : "天青色等烟雨，而我在等你！",
+                submsg  : "炊烟袅袅升起，隔江千万里。",
+                onok : function(){
+                    console.log("onok");
+                }
+            });
+        </pre>
+
+        <script>
+
+            document.getElementById("alert").onclick = function(){
+                pop.alert({
+                    title   : "青花瓷",
+                    msg     : "天青色等烟雨，而我在等你！",
+                    submsg  : "炊烟袅袅升起，隔江千万里。",
+                    onok : function(){
+                        console.log("onok");
+                    }
+                });
+            }
+        </script>
+        <pre>
+
+            <div id="confirm" class="btn btn-success btn-sm">confirm</div>
+
+            pop.confirm({
+                title   : "同福客栈",
+                msg     : "客官您打尖还是住店啊？",
+                submsg  : "小店现已支持支付宝、微信在线支付。小本生意，盖不赊账。",
+                onok : function(){
+                    console.log("打尖");
+                },
+                oncancel : function(){
+                    console.log("住店");
+                },
+                okText : "打尖",
+                cancelText : "住店",
+            });
+        </pre>
+        <script>
+            document.getElementById("confirm").onclick = function(){
+                pop.confirm({
+                    title   : "同福客栈",
+                    msg     : "客官您打尖还是住店啊？",
+                    submsg  : "小店现已支持支付宝、微信在线支付。小本生意，盖不赊账。",
+                    onok : function(){
+                        console.log("打尖");
+                    },
+                    oncancel : function(){
+                        console.log("住店");
+                    },
+                    okText : "打尖",
+                    cancelText : "住店",
+                });
+            }
+        </script>
+        <pre>
+
+            <div id="prompt" class="btn btn-success btn-sm">prompt</div>
+
+            pop.prompt({
+                title   : "赠汪伦",
+                msg     : "桃花潭水深千尺，不及____送我情",
+                submsg  :
+                    `A、汪伦
+                    B、王抡
+                    C、汪纶
+                    D、王轮`,
+                placeholder : "从下列选项中选出正确答案",
+                onok : function(info){
+                    console.log(info);
+                },
+                oncancel : function(){
+                    console.log("giveup");
+                },
+                okText : "确认答案",
+                cancelText : "放弃作答",
+            });
+        </pre>
+        <script>
+            document.getElementById("prompt").onclick = function(){
+                pop.prompt({
+                    title   : "赠汪伦",
+                    msg     : "桃花潭水深千尺，不及____送我情",
+                    submsg  :
+                        `A、汪伦
+                        B、王抡
+                        C、汪纶
+                        D、王轮`,
+                    placeholder : "从下列选项中选出正确答案",
+                    onok : function(info){
+                        console.log(info);
+                    },
+                    oncancel : function(){
+                        console.log("giveup");
+                    },
+                    okText : "确认答案",
+                    cancelText : "放弃作答",
+                });
+            }
+        </script>
+        <pre>
+
+            <div id="cover" class="btn btn-success btn-sm">cover</div>
+
+            var msg = function(second){
+                return "敌军还有" + second + "秒到达战场"
+            }
+
+            var surplus = 5;
+
+            var cover = pop.cover({
+                msg     : msg(surplus),
+                onopen : function(info){
+                    var timer = setInterval(function(){
+                        surplus--;
+                        if(surplus){
+                            cover.Update({
+                                msg     : msg(surplus),
+                            })
+                        }else{
+                            clearInterval(timer);
+                            cover.Hide();
+                        }
+                    },1000)
+                },
+                onclose : function(){
+                    console.log("敌军到达战场");
+                },
+            });
+        </pre>
+        <script>
+            document.getElementById("cover").onclick = function(){
+
+                var msg = function(second){
+                    return "敌军还有" + second + "秒到达战场"
+                }
+
+                var surplus = 5;
+
+                var cover = pop.cover({
+                    msg     : msg(surplus),
+                    onopen : function(info){
+                        var timer = setInterval(function(){
+                            surplus--;
+                            if(surplus){
+                                cover.Update({
+                                    msg     : msg(surplus),
+                                })
+                            }else{
+                                clearInterval(timer);
+                                cover.Hide();
+                            }
+                        },1000)
+                    },
+                    onclose : function(){
+                        console.log("敌军到达战场");
+                    },
+                });
+            }
+        </script>
+
+
+    </body>
+</html>
